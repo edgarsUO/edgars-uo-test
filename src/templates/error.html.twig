@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Something went wrong while retrieving data</h1>
+    <p>
+        The requested data couldn't be loaded.
+        <a href="{{ path('weather') }}">Retry weather app</a> or
+        <a href="{{ path('homepage') }}">return to the homepage</a>.
+    </p>
+    <p>
+        {{ error_message }}
+    </p>
+{% endblock %}

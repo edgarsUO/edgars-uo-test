@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Weather forecast</h1>
+    <div>
+        <h4>Your ip: </h4><p>{{ user_ip }}</p>
+    </div><br>
+    <div>
+        <h4>Your coords:</h4>
+        <ul>
+            {% for key, val in user_coords %}
+                <li>{{ key }}: {{ val }}</li>
+            {% endfor %}
+        </ul>
+    </div><br>
+    <div>
+        <h4>WeatherData: </h4><br>
+        <p>{{ weather_data }}</p>
+    </div>
+    {{ form_start(form, {'action': path('weather'), 'method': 'PURGE'}) }}
+    {{ form_end(form) }}
+{% endblock %}

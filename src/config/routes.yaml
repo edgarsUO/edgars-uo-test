@@ -1,0 +1,11 @@
+homepage:
+  path: /
+  controller: App\Controller\HomePageController::index
+
+weather:
+  path: /weather
+  controller: App\Controller\WeatherPageController::index
+
+weather-app-error:
+  path: /weather-app-error
+  controller: App\Controller\WeatherPageController::errorIndex
