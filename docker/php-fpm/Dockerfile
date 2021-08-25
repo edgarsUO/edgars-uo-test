@@ -16,6 +16,6 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 
 CMD composer i -o ; wait-for-it db:5432 -- bin/console doctrine:database:create ; bin/console doctrine:migrations:migrate ; setfacl -R -m u:www-data:rwX -m u:`whoami`:rwX ./var/cache ./var/log ; setfacl -dR -m u:www-data:rwX -m u:`whoami`:rwX ./var/cache ./var/log ; php-fpm
-
+RUN usermod -u 1000 www-data
 
 EXPOSE 9000
