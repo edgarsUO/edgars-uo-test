@@ -17,6 +17,6 @@
         <h4>WeatherData: </h4><br>
         <p>{{ weather_data }}</p>
     </div>
-    {{ form_start(form, {'action': path('weather'), 'method': 'PURGE'}) }}
+    {{ form_start(form, {'action': path('weather'), 'method': 'POST'}) }}
     {{ form_end(form) }}
 {% endblock %}

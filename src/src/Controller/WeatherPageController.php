@@ -71,6 +71,9 @@ class WeatherPageController extends AbstractController
                     'form' => $form->createView()
                 ]
             );
+
+            // Cache issue present. Content gets shared across multiple users, thus displaying
+            // incorrect and private data. Update in progress.
             $response->setSharedMaxAge(3600);
 
         } catch (WeatherAppException $e) {
